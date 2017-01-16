@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/BreakfastGen.iml" filepath="$PROJECT_DIR$/BreakfastGen.iml" />
       <module fileurl="file://$PROJECT_DIR$/BreakfastGenerator.iml" filepath="$PROJECT_DIR$/BreakfastGenerator.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

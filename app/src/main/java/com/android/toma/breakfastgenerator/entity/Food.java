@@ -1,8 +1,7 @@
 package com.android.toma.breakfastgenerator.entity;
 
-public class Food {
-    private String mTitle;
-    private int mCookingTime;
-    private Ingredients mIngredients;
-    private FoodImage mFoodImage;
+public abstract class Food {
+    public static int nextId = 0;
+
+    public abstract int getId();
 }
