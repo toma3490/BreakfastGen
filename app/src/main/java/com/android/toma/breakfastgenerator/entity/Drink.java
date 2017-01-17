@@ -5,10 +5,10 @@ public class Drink extends Food{
     private String title;
     private int cookingTime;
     private Ingredients ingredients;
-    private FoodImage foodImage;
+    private int foodImage;
     private int id;
 
-    public Drink(String title, int cookingTime, Ingredients ingredients, FoodImage foodImage) {
+    public Drink(String title, int cookingTime, Ingredients ingredients, int foodImage) {
         this.title = title;
         this.cookingTime = cookingTime;
         this.ingredients = ingredients;
@@ -40,11 +40,11 @@ public class Drink extends Food{
         this.ingredients = ingredients;
     }
 
-    public FoodImage getFoodImage() {
+    public int getFoodImage() {
         return foodImage;
     }
 
-    public void setFoodImage(FoodImage foodImage) {
+    public void setFoodImage(int foodImage) {
         this.foodImage = foodImage;
     }
 
@@ -61,9 +61,10 @@ public class Drink extends Food{
         Drink drink = (Drink) o;
 
         if (cookingTime != drink.cookingTime) return false;
+        if (foodImage != drink.foodImage) return false;
+        if (id != drink.id) return false;
         if (title != null ? !title.equals(drink.title) : drink.title != null) return false;
-        if (ingredients != null ? !ingredients.equals(drink.ingredients) : drink.ingredients != null) return false;
-        return foodImage != null ? foodImage.equals(drink.foodImage) : drink.foodImage == null;
+        return ingredients != null ? ingredients.equals(drink.ingredients) : drink.ingredients == null;
 
     }
 
@@ -72,7 +73,8 @@ public class Drink extends Food{
         int result = title != null ? title.hashCode() : 0;
         result = 31 * result + cookingTime;
         result = 31 * result + (ingredients != null ? ingredients.hashCode() : 0);
-        result = 31 * result + (foodImage != null ? foodImage.hashCode() : 0);
+        result = 31 * result + foodImage;
+        result = 31 * result + id;
         return result;
     }
 

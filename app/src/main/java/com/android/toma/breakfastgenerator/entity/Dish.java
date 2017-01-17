@@ -5,10 +5,10 @@ public class Dish extends Food{
     private String title;
     private int cookingTime;
     private Ingredients ingredients;
-    private FoodImage foodImage;
+    private int foodImage;
     private int id;
 
-    public Dish(String title, int cookingTime, Ingredients ingredients, FoodImage foodImage) {
+    public Dish(String title, int cookingTime, Ingredients ingredients, int foodImage) {
         this.title = title;
         this.cookingTime = cookingTime;
         this.ingredients = ingredients;
@@ -40,11 +40,11 @@ public class Dish extends Food{
         this.ingredients = ingredients;
     }
 
-    public FoodImage getFoodImage() {
+    public int getFoodImage() {
         return foodImage;
     }
 
-    public void setFoodImage(FoodImage foodImage) {
+    public void setFoodImage(int foodImage) {
         this.foodImage = foodImage;
     }
 
@@ -61,9 +61,10 @@ public class Dish extends Food{
         Dish dish = (Dish) o;
 
         if (cookingTime != dish.cookingTime) return false;
+        if (foodImage != dish.foodImage) return false;
+        if (id != dish.id) return false;
         if (title != null ? !title.equals(dish.title) : dish.title != null) return false;
-        if (ingredients != null ? !ingredients.equals(dish.ingredients) : dish.ingredients != null) return false;
-        return foodImage != null ? foodImage.equals(dish.foodImage) : dish.foodImage == null;
+        return ingredients != null ? ingredients.equals(dish.ingredients) : dish.ingredients == null;
 
     }
 
@@ -72,15 +73,15 @@ public class Dish extends Food{
         int result = title != null ? title.hashCode() : 0;
         result = 31 * result + cookingTime;
         result = 31 * result + (ingredients != null ? ingredients.hashCode() : 0);
-        result = 31 * result + (foodImage != null ? foodImage.hashCode() : 0);
+        result = 31 * result + foodImage;
+        result = 31 * result + id;
         return result;
     }
 
     @Override
     public String toString() {
-        return  "title='" + title + '\'' +
-                ", cookingTime=" + cookingTime +
-                ", ingredients=" + ingredients +
-                ", foodImage=" + foodImage;
+        return  '\n' + title +
+                ", cooking time = " + cookingTime +
+                " min, ingredients =" + ingredients;
     }
 }
