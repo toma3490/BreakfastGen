@@ -110,6 +110,38 @@ public class PrimitiveDB {
         second_category_dishes.add(second_dish);
     }
 
+    static {
+        // Ingredients drinks
+        Ingredients ingr_drink_0 = new Ingredients();
+        ingr_drink_0.addIngr("Black Tea");
+        ingr_drink_0.addIngr("Lemon");
+        ingr_drink_0.addIngr("Sugar");
+        Ingredients ingr_drink_1 = new Ingredients();
+        ingr_drink_1.addIngr("Green Tea");
+        ingr_drink_1.addIngr("Lemon");
+        ingr_drink_1.addIngr("Sugar");
+        Ingredients ingr_drink_2 = new Ingredients();
+        ingr_drink_2.addIngr("Coffee");
+        ingr_drink_2.addIngr("Milk");
+        ingr_drink_2.addIngr("Sugar");
+        Ingredients ingr_drink_3 = new Ingredients();
+        ingr_drink_3.addIngr("Cocoa");
+        ingr_drink_3.addIngr("Milk");
+        ingr_drink_3.addIngr("Sugar");
+
+        // Drinks
+        Drink drink_0 = new Drink("Black tea with lemon", 10, ingr_drink_0, 1);
+        Drink drink_1 = new Drink("Green tea with lemon", 10, ingr_drink_1, 1);
+        Drink drink_2 = new Drink("Coffee with milk", 10, ingr_drink_2, 1);
+        Drink drink_3 = new Drink("Cocoa with milk", 10, ingr_drink_3, 1);
+
+        // Add dishes to list
+        drinks.add(drink_0);
+        drinks.add(drink_1);
+        drinks.add(drink_2);
+        drinks.add(drink_3);
+    }
+
     public PrimitiveDB() {
 
     }
