@@ -28,8 +28,7 @@ public class FoodController extends ControllerImpl<Food> {
                 ArrayList<Food> drinks = primitiveDB.getDrinks();
                 int drinkIndex = indexGenerator(drinks);
                 breakfast.add(getByIndex(drinks, drinkIndex));
-//                return breakfast;
-                break;
+                return breakfast;
             case 1:
                 ArrayList<Food> secondCategoryDishesFirstDish = primitiveDB.getSecondCategoryDishesFirstDish();
                 int foodIndex1 = indexGenerator(secondCategoryDishesFirstDish);
@@ -41,10 +40,8 @@ public class FoodController extends ControllerImpl<Food> {
                 int drinkIndex1 = indexGenerator(drinks1);
                 breakfast.add(getByIndex(drinks1, drinkIndex1));
                 return breakfast;
-//                break;
             case 2:
-                generateBreakfast(randomGenerator(1));
-                break;
+                return generateBreakfast(randomGenerator(2));
         }
         return breakfast;
     }

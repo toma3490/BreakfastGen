@@ -9,7 +9,7 @@ public class ControllerImpl<T> implements AbstractController<T> {
     @Override
     public int randomGenerator(int max) {
         int min = 0;
-        int random = min + (int)(Math.random()*((max - min) + 1));
+        int random = min + (int)(Math.random()*(max - min));
         return random;
     }
 
