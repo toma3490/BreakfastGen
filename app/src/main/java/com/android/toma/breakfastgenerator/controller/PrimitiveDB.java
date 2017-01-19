@@ -2,159 +2,168 @@ package com.android.toma.breakfastgenerator.controller;
 
 import com.android.toma.breakfastgenerator.entity.Dish;
 import com.android.toma.breakfastgenerator.entity.Drink;
+import com.android.toma.breakfastgenerator.entity.Food;
 import com.android.toma.breakfastgenerator.entity.Ingredients;
 
 import java.util.ArrayList;
 
 public class PrimitiveDB {
 
-    private static ArrayList<Dish> first_category_dishes = new ArrayList<>();
-    private static ArrayList<ArrayList<Dish>> second_category_dishes = new ArrayList<>();
-    private static ArrayList<Drink> drinks = new ArrayList<>();
+    private static ArrayList<Food> firstCategoryDishes = new ArrayList<>();
+    private static ArrayList<ArrayList<Food>> secondCategoryDishes = new ArrayList<>();
+    private static ArrayList<Food> drinks = new ArrayList<>();
 
     static {
-        // Ingredients
-        Ingredients ingr_dish_0 = new Ingredients();
-        ingr_dish_0.addIngr("Pancakes");
-        ingr_dish_0.addIngr("Jam");
-        Ingredients ingr_dish_1 = new Ingredients();
-        ingr_dish_1.addIngr("Pancakes");
-        ingr_dish_1.addIngr("Banana");
-        ingr_dish_1.addIngr("Nutella");
-        Ingredients ingr_dish_2 = new Ingredients();
-        ingr_dish_2.addIngr("Muesli");
-        ingr_dish_2.addIngr("Nuts");
-        Ingredients ingr_dish_3 = new Ingredients();
-        ingr_dish_3.addIngr("Eggs");
-        ingr_dish_3.addIngr("Vegetables");
-        Ingredients ingr_dish_4 = new Ingredients();
-        ingr_dish_4.addIngr("Bread");
-        ingr_dish_4.addIngr("Egg");
-        ingr_dish_4.addIngr("Tomato");
-        ingr_dish_4.addIngr("Cheese");
-        Ingredients ingr_dish_5 = new Ingredients();
-        ingr_dish_5.addIngr("Cottage cheese");
-        ingr_dish_5.addIngr("Jam");
-        Ingredients ingr_dish_6 = new Ingredients();
-        ingr_dish_6.addIngr("Yogurt");
-        ingr_dish_6.addIngr("Jam");
+        // Ingredients food 1 category
+        Ingredients ingrDish0 = new Ingredients();
+        ingrDish0.addIngr("Pancakes");
+        ingrDish0.addIngr("Jam");
+        Ingredients ingrDish1 = new Ingredients();
+        ingrDish1.addIngr("Pancakes");
+        ingrDish1.addIngr("Banana");
+        ingrDish1.addIngr("Nutella");
+        Ingredients ingrDish2 = new Ingredients();
+        ingrDish2.addIngr("Muesli");
+        ingrDish2.addIngr("Nuts");
+        Ingredients ingrDish3 = new Ingredients();
+        ingrDish3.addIngr("Eggs");
+        ingrDish3.addIngr("Vegetables");
+        Ingredients ingrDish4 = new Ingredients();
+        ingrDish4.addIngr("Bread");
+        ingrDish4.addIngr("Egg");
+        ingrDish4.addIngr("Tomato");
+        ingrDish4.addIngr("Cheese");
+        Ingredients ingrDish5 = new Ingredients();
+        ingrDish5.addIngr("Cottage cheese");
+        ingrDish5.addIngr("Jam");
+        Ingredients ingrDish6 = new Ingredients();
+        ingrDish6.addIngr("Yogurt");
+        ingrDish6.addIngr("Jam");
 
         // Dishes
-        Dish dish_0 = new Dish("Pancakes with jam", 30, ingr_dish_0, 1);
-        Dish dish_1 = new Dish("Pancakes with banana and nutella", 30, ingr_dish_1, 1);
-        Dish dish_2 = new Dish("Muesli with nuts", 15, ingr_dish_2, 1);
-        Dish dish_3 = new Dish("Omelet with vegetables", 25, ingr_dish_3, 1);
-        Dish dish_4 = new Dish("Egg-bread with tomato and cheese", 20, ingr_dish_4, 1);
-        Dish dish_5 = new Dish("Cottage cheese with jam", 5, ingr_dish_5, 1);
-        Dish dish_6 = new Dish("Yogurt with jam", 5, ingr_dish_6, 1);
+        Dish dish0 = new Dish("Pancakes with jam", 30, ingrDish0, 1);
+        Dish dish1 = new Dish("Pancakes with banana and nutella", 30, ingrDish1, 1);
+        Dish dish2 = new Dish("Muesli with nuts", 15, ingrDish2, 1);
+        Dish dish3 = new Dish("Omelet with vegetables", 25, ingrDish3, 1);
+        Dish dish4 = new Dish("Egg-bread with tomato and cheese", 20, ingrDish4, 1);
+        Dish dish5 = new Dish("Cottage cheese with jam", 5, ingrDish5, 1);
+        Dish dish6 = new Dish("Yogurt with jam", 5, ingrDish6, 1);
 
         // Add dishes to list
-        first_category_dishes.add(dish_0);
-        first_category_dishes.add(dish_1);
-        first_category_dishes.add(dish_2);
-        first_category_dishes.add(dish_3);
-        first_category_dishes.add(dish_4);
-        first_category_dishes.add(dish_5);
-        first_category_dishes.add(dish_6);
+        firstCategoryDishes.add(dish0);
+        firstCategoryDishes.add(dish1);
+        firstCategoryDishes.add(dish2);
+        firstCategoryDishes.add(dish3);
+        firstCategoryDishes.add(dish4);
+        firstCategoryDishes.add(dish5);
+        firstCategoryDishes.add(dish6);
     }
 
     static {
-        // Ingredients
-        Ingredients ingr_dish_0 = new Ingredients();
-        ingr_dish_0.addIngr("Egg");
-        Ingredients ingr_dish_1 = new Ingredients();
-        ingr_dish_1.addIngr("Bread");
-        ingr_dish_1.addIngr("Butter");
-        Ingredients ingr_dish_2 = new Ingredients();
-        ingr_dish_2.addIngr("Bread");
-        ingr_dish_2.addIngr("Processed cheese");
-        ingr_dish_2.addIngr("Tomato");
-        Ingredients ingr_dish_3 = new Ingredients();
-        ingr_dish_3.addIngr("Bread");
-        ingr_dish_3.addIngr("Tuna");
-        Ingredients ingr_dish_4 = new Ingredients();
-        ingr_dish_4.addIngr("Bread");
-        ingr_dish_4.addIngr("Egg");
-        ingr_dish_4.addIngr("Cheese");
-        Ingredients ingr_dish_5 = new Ingredients();
-        ingr_dish_5.addIngr("Bread");
-        ingr_dish_5.addIngr("Butter");
-        ingr_dish_5.addIngr("Processed cheese");
-        Ingredients ingr_dish_6 = new Ingredients();
-        ingr_dish_6.addIngr("Bread");
-        ingr_dish_6.addIngr("Peanut butter");
+        // Ingredients food 2 category
+        Ingredients ingrDish0 = new Ingredients();
+        ingrDish0.addIngr("Egg");
+        Ingredients ingrDish1 = new Ingredients();
+        ingrDish1.addIngr("Bread");
+        ingrDish1.addIngr("Butter");
+        Ingredients ingrDish2 = new Ingredients();
+        ingrDish2.addIngr("Bread");
+        ingrDish2.addIngr("Processed cheese");
+        ingrDish2.addIngr("Tomato");
+        Ingredients ingrDish3 = new Ingredients();
+        ingrDish3.addIngr("Bread");
+        ingrDish3.addIngr("Tuna");
+        Ingredients ingrDish4 = new Ingredients();
+        ingrDish4.addIngr("Bread");
+        ingrDish4.addIngr("Egg");
+        ingrDish4.addIngr("Cheese");
+        Ingredients ingrDish5 = new Ingredients();
+        ingrDish5.addIngr("Bread");
+        ingrDish5.addIngr("Butter");
+        ingrDish5.addIngr("Processed cheese");
+        Ingredients ingrDish6 = new Ingredients();
+        ingrDish6.addIngr("Bread");
+        ingrDish6.addIngr("Peanut butter");
 
         // Dishes
-        Dish dish_0 = new Dish("Boiled egg", 10, ingr_dish_0, 1);
-        Dish dish_1 = new Dish("Fried egg", 10, ingr_dish_0, 1);
-        Dish dish_2 = new Dish("Sandwich with butter", 5, ingr_dish_1, 1);
-        Dish dish_3 = new Dish("Sandwich with processed cheese and tomato", 5, ingr_dish_2, 1);
-        Dish dish_4 = new Dish("Sandwich with tuna", 5, ingr_dish_3, 1);
-        Dish dish_5 = new Dish("Egg toast with cheese", 10, ingr_dish_4, 1);
-        Dish dish_6 = new Dish("Toast with processed cheese", 10, ingr_dish_5, 1);
-        Dish dish_7 = new Dish("Sandwich with peanut butter", 5, ingr_dish_6, 1);
+        Dish dish0 = new Dish("Boiled egg", 10, ingrDish0, 1);
+        Dish dish1 = new Dish("Fried egg", 10, ingrDish0, 1);
+        Dish dish2 = new Dish("Sandwich with butter", 5, ingrDish1, 1);
+        Dish dish3 = new Dish("Sandwich with processed cheese and tomato", 5, ingrDish2, 1);
+        Dish dish4 = new Dish("Sandwich with tuna", 5, ingrDish3, 1);
+        Dish dish5 = new Dish("Egg toast with cheese", 10, ingrDish4, 1);
+        Dish dish6 = new Dish("Toast with processed cheese", 10, ingrDish5, 1);
+        Dish dish7 = new Dish("Sandwich with peanut butter", 5, ingrDish6, 1);
 
-        ArrayList<Dish> first_dish = new ArrayList<>();
-        first_dish.add(dish_0);
-        first_dish.add(dish_1);
-        ArrayList<Dish> second_dish = new ArrayList<>();
-        second_dish.add(dish_2);
-        second_dish.add(dish_3);
-        second_dish.add(dish_4);
-        second_dish.add(dish_5);
-        second_dish.add(dish_6);
-        second_dish.add(dish_7);
+        ArrayList<Food> firstDish = new ArrayList<>();
+        firstDish.add(dish0);
+        firstDish.add(dish1);
+        ArrayList<Food> secondDish = new ArrayList<>();
+        secondDish.add(dish2);
+        secondDish.add(dish3);
+        secondDish.add(dish4);
+        secondDish.add(dish5);
+        secondDish.add(dish6);
+        secondDish.add(dish7);
 
         // Add dishes to list
-        second_category_dishes.add(first_dish);
-        second_category_dishes.add(second_dish);
+        secondCategoryDishes.add(firstDish);
+        secondCategoryDishes.add(secondDish);
     }
 
     static {
         // Ingredients drinks
-        Ingredients ingr_drink_0 = new Ingredients();
-        ingr_drink_0.addIngr("Black Tea");
-        ingr_drink_0.addIngr("Lemon");
-        ingr_drink_0.addIngr("Sugar");
-        Ingredients ingr_drink_1 = new Ingredients();
-        ingr_drink_1.addIngr("Green Tea");
-        ingr_drink_1.addIngr("Lemon");
-        ingr_drink_1.addIngr("Sugar");
-        Ingredients ingr_drink_2 = new Ingredients();
-        ingr_drink_2.addIngr("Coffee");
-        ingr_drink_2.addIngr("Milk");
-        ingr_drink_2.addIngr("Sugar");
-        Ingredients ingr_drink_3 = new Ingredients();
-        ingr_drink_3.addIngr("Cocoa");
-        ingr_drink_3.addIngr("Milk");
-        ingr_drink_3.addIngr("Sugar");
+        Ingredients ingrDrink0 = new Ingredients();
+        ingrDrink0.addIngr("Black Tea");
+        ingrDrink0.addIngr("Lemon");
+        ingrDrink0.addIngr("Sugar");
+        Ingredients ingrDrink1 = new Ingredients();
+        ingrDrink1.addIngr("Green Tea");
+        ingrDrink1.addIngr("Lemon");
+        ingrDrink1.addIngr("Sugar");
+        Ingredients ingrDrink2 = new Ingredients();
+        ingrDrink2.addIngr("Coffee");
+        ingrDrink2.addIngr("Milk");
+        ingrDrink2.addIngr("Sugar");
+        Ingredients ingrDrink3 = new Ingredients();
+        ingrDrink3.addIngr("Cocoa");
+        ingrDrink3.addIngr("Milk");
+        ingrDrink3.addIngr("Sugar");
 
         // Drinks
-        Drink drink_0 = new Drink("Black tea with lemon", 10, ingr_drink_0, 1);
-        Drink drink_1 = new Drink("Green tea with lemon", 10, ingr_drink_1, 1);
-        Drink drink_2 = new Drink("Coffee with milk", 10, ingr_drink_2, 1);
-        Drink drink_3 = new Drink("Cocoa with milk", 10, ingr_drink_3, 1);
+        Drink drink0 = new Drink("Black tea with lemon", 10, ingrDrink0, 1);
+        Drink drink1 = new Drink("Green tea with lemon", 10, ingrDrink1, 1);
+        Drink drink2 = new Drink("Coffee with milk", 10, ingrDrink2, 1);
+        Drink drink3 = new Drink("Cocoa with milk", 10, ingrDrink3, 1);
 
         // Add dishes to list
-        drinks.add(drink_0);
-        drinks.add(drink_1);
-        drinks.add(drink_2);
-        drinks.add(drink_3);
+        drinks.add(drink0);
+        drinks.add(drink1);
+        drinks.add(drink2);
+        drinks.add(drink3);
     }
 
     public PrimitiveDB() {
 
     }
 
-    public ArrayList<Dish> getFirst_category_dishes(){
-        return first_category_dishes;
+    public ArrayList<Food> getFirstCategoryDishes(){
+        return firstCategoryDishes;
     }
 
-    public ArrayList<ArrayList<Dish>> getSecond_category_dishes(){
-        return second_category_dishes;
+    public ArrayList<ArrayList<Food>> getSecondCategoryDishes(){
+        return secondCategoryDishes;
     }
 
-    public ArrayList<Drink> getDrinks(){
+    public ArrayList<Food> getSecondCategoryDishesFirstDish(){
+        return secondCategoryDishes.get(0);
+    }
+
+    public ArrayList<Food> getSecondCategoryDishesSecondDish(){
+        return secondCategoryDishes.get(1);
+    }
+
+    public ArrayList<Food> getDrinks(){
         return drinks;
     }
 }
