@@ -8,4 +8,6 @@
     <string name="_3_var">Surprise me</string>
     <string name="generate">Generate</string>
     <string name="back">I want smt else</string>
+    <string name="cooking_time">COOKING TIME</string>
+    <string name="ingredients">INGREDIENTS</string>
 </resources>

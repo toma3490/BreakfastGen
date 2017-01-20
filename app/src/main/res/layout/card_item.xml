@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/dish_time_cooking"
                 android:textColor="@color/colorSecondaryText"
-                android:text="@string/app_name"
+                android:text="@string/cooking_time"
                 android:layout_weight="50"/>
 
             <TextView
@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/dish_recipe"
                 android:textColor="@color/colorAccent"
-                android:text="@string/app_name"
+                android:text="@string/ingredients"
                 android:layout_weight="10"/>
         </LinearLayout>
 
