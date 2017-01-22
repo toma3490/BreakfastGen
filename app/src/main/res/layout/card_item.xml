@@ -27,7 +27,7 @@
             android:weightSum="100">
 
             <TextView
-                android:id="@+id/dish_title"
+                android:id="@+id/dishTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/app_name"
@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/dish_time_cooking"
+                android:id="@+id/dishCookingTime"
                 android:textColor="@color/colorSecondaryText"
                 android:text="@string/cooking_time"
                 android:layout_weight="50"/>
@@ -46,7 +46,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/dish_recipe"
+                android:id="@+id/dishIngredients"
                 android:textColor="@color/colorAccent"
                 android:text="@string/ingredients"
                 android:layout_weight="10"/>
