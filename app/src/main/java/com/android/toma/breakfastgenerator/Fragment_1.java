@@ -44,4 +44,7 @@ public class Fragment_1 extends Fragment{
         return mRadioGroup.getCheckedRadioButtonId();
     }
 
+    public interface OnSelectedItemListener{
+        void onItemSelected(int index);
+    }
 }

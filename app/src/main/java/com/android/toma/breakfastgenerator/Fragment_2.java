@@ -40,4 +40,9 @@ public class Fragment_2 extends Fragment {
 
         return view;
     }
+//    TODO write correct logic to generate data
+    public int getIndex(int i){
+        mController.generateBreakfast(i);
+        return i;
+    }
 }
