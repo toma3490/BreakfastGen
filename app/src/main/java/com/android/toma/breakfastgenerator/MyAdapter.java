@@ -8,27 +8,28 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.toma.breakfastgenerator.entity.Food;
+
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
 
     private LayoutInflater layoutInflater;
-    private ArrayList<String> list;
+    private ArrayList<Food> mFoods;
     private OnClickMyAdapter onClickMyAdapter;
-    private int previousPosition = 0;
 
-    public MyAdapter(Context context, ArrayList<String> list) {
+    public MyAdapter(Context context, ArrayList<Food> list) {
         layoutInflater = LayoutInflater.from(context);
-        this.list = list;
+        this.mFoods = list;
     }
 
-    public void updateList(ArrayList<String> list){
-        this.list = list;
+    public void updateList(ArrayList<Food> list){
+        this.mFoods = list;
         notifyDataSetChanged();
     }
 
-    public void updateListPosition(ArrayList<String> list, int position){
-        this.list = list;
+    public void updateListPosition(ArrayList<Food> list, int position){
+        this.mFoods = list;
         notifyItemRemoved(position);
     }
 
@@ -43,18 +44,20 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
 
     @Override
     public void onBindViewHolder(Holder holder, final int position) {
-        holder.mDishTitle.setText(list.get(position));
-        holder.mView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onClickMyAdapter.onClick(position);
-            }
-        });
+        holder.mDishTitle.setText(mFoods.get(position).getTitle());
+        holder.mDishCookingTime.setText("COOKING TIME " + mFoods.get(position).getCookingTime());
+//        holder.mDishIngredients.setText(mFoods.get(position).toString());
+//        holder.mView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onClickMyAdapter.onClick(position);
+//            }
+//        });
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return mFoods.size();
     }
 
     @Override

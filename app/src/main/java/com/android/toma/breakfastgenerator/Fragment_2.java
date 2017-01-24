@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.android.toma.breakfastgenerator.controller.FoodController;
+import com.android.toma.breakfastgenerator.entity.Food;
 
 import java.util.ArrayList;
 
@@ -16,8 +17,8 @@ public class Fragment_2 extends Fragment {
 
     private RecyclerView mRecyclerView;
     private MyAdapter mAdapter;
-    private FoodController mController;
-    private ArrayList<String> mList;
+    private static FoodController mController;
+    private ArrayList<Food> mList;
     private LinearLayoutManager mLinearLayoutManager;
 
     @Override
@@ -29,20 +30,18 @@ public class Fragment_2 extends Fragment {
         mLinearLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         mController = new FoodController();
-//        TODO mController.generateBreakfast()
-        mList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            mList.add("item = " + i);
-        }
+//        for (int i = 0; i < 10; i++) {
+//            mList.add("item = " + i);
+//        }
         mAdapter = new MyAdapter(getContext(), mList);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(mLinearLayoutManager);
 
         return view;
     }
-//    TODO write correct logic to generate data
-    public int getIndex(int i){
-        mController.generateBreakfast(i);
-        return i;
+
+    public ArrayList<Food> getIndex(int i){
+        mList = mController.generateBreakfast(i);
+        return mList;
     }
 }

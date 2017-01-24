@@ -18,7 +18,7 @@ public class Fragment_1 extends Fragment{
 //    TODO public int mCheckedPoint;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment1, container, false);
         mFragment_2 = new Fragment_2();
         mRadioGroup = (RadioGroup) view.findViewById(R.id.radioGroup);
@@ -29,7 +29,10 @@ public class Fragment_1 extends Fragment{
         generateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                TODO mCheckedPoint = getCheckedPoint();
+                int buttonIndex = getIndexById(getCheckedPoint());
+                OnSelectedItemListener listener = (OnSelectedItemListener) getActivity();
+                listener.onItemSelected(buttonIndex);
+//                Toast.makeText(getActivity(), String.valueOf(buttonIndex), Toast.LENGTH_SHORT).show();
                 mFragmentTransaction = getFragmentManager().beginTransaction();
                 mFragmentTransaction.replace(R.id.main, mFragment_2);
                 mFragmentTransaction.addToBackStack(null);
@@ -38,6 +41,22 @@ public class Fragment_1 extends Fragment{
         });
 
         return view;
+    }
+
+    public int getIndexById (int id){
+        int index = -1;
+        switch (id) {
+            case R.id._1_var:
+                index = 0;
+                break;
+            case R.id._2_var:
+                index = 1;
+                break;
+            case R.id._3_var:
+                index = 2;
+                break;
+        }
+        return index;
     }
 
     public int getCheckedPoint(){
