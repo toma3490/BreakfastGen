@@ -30,6 +30,7 @@ public class Fragment_2 extends Fragment {
         mLinearLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         mController = new FoodController();
+        mList = new ArrayList<>();
 //        for (int i = 0; i < 10; i++) {
 //            mList.add("item = " + i);
 //        }

@@ -1,5 +1,6 @@
 package com.android.toma.breakfastgenerator;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -15,7 +16,7 @@ public class Fragment_1 extends Fragment{
     public FragmentTransaction mFragmentTransaction;
     public Fragment_2 mFragment_2;
     private RadioGroup mRadioGroup;
-//    TODO public int mCheckedPoint;
+    private OnSelectedItemListener mListener;
 
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -29,10 +30,7 @@ public class Fragment_1 extends Fragment{
         generateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int buttonIndex = getIndexById(getCheckedPoint());
-                OnSelectedItemListener listener = (OnSelectedItemListener) getActivity();
-                listener.onItemSelected(buttonIndex);
-//                Toast.makeText(getActivity(), String.valueOf(buttonIndex), Toast.LENGTH_SHORT).show();
+                getIndex();
                 mFragmentTransaction = getFragmentManager().beginTransaction();
                 mFragmentTransaction.replace(R.id.main, mFragment_2);
                 mFragmentTransaction.addToBackStack(null);
@@ -65,5 +63,19 @@ public class Fragment_1 extends Fragment{
 
     public interface OnSelectedItemListener{
         void onItemSelected(int index);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try{
+            mListener = (OnSelectedItemListener) context;
+        } catch (ClassCastException e){
+            throw new ClassCastException(context.toString() + "must implements interface OnSelectedItemListener");
+        }
+    }
+
+    public void getIndex(){
+        mListener.onItemSelected(getCheckedPoint());
     }
 }
