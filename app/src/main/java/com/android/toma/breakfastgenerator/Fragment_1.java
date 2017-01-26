@@ -30,7 +30,7 @@ public class Fragment_1 extends Fragment{
         generateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getIndex();
+                getIndexById(getCheckedPoint());
                 mFragmentTransaction = getFragmentManager().beginTransaction();
                 mFragmentTransaction.replace(R.id.main, mFragment_2);
                 mFragmentTransaction.addToBackStack(null);
