@@ -1,5 +1,6 @@
 package com.android.toma.breakfastgenerator.controller;
 
+import com.android.toma.breakfastgenerator.R;
 import com.android.toma.breakfastgenerator.entity.Dish;
 import com.android.toma.breakfastgenerator.entity.Drink;
 import com.android.toma.breakfastgenerator.entity.Food;
@@ -41,8 +42,8 @@ public class PrimitiveDB {
         ingrDish6.addIngr("Jam");
 
         // Dishes
-        Dish dish0 = new Dish("Pancakes with jam", 30, ingrDish0, 1);
-        Dish dish1 = new Dish("Pancakes with banana and nutella", 30, ingrDish1, 1);
+        Dish dish0 = new Dish("Pancakes with jam", 30, ingrDish0, R.drawable.test);
+        Dish dish1 = new Dish("Pancakes with banana and nutella", 30, ingrDish1, R.drawable.test2);
         Dish dish2 = new Dish("Muesli with nuts", 15, ingrDish2, 1);
         Dish dish3 = new Dish("Omelet with vegetables", 25, ingrDish3, 1);
         Dish dish4 = new Dish("Egg-bread with tomato and cheese", 20, ingrDish4, 1);
