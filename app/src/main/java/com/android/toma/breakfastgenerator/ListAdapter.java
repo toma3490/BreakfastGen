@@ -15,21 +15,21 @@ import java.util.ArrayList;
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.Holder> {
 
     private LayoutInflater layoutInflater;
-    private ArrayList<Food> mFoods;
+    private ArrayList<Food> foodList;
 //    private OnClickMyAdapter onClickMyAdapter;
 
     public ListAdapter(Context context, ArrayList<Food> list) {
         layoutInflater = LayoutInflater.from(context);
-        this.mFoods = list;
+        this.foodList = list;
     }
 
 //    public void updateList(ArrayList<Food> list){
-//        this.mFoods = list;
+//        this.foodList = list;
 //        notifyDataSetChanged();
 //    }
 
 //    public void updateListPosition(ArrayList<Food> list, int position){
-//        this.mFoods = list;
+//        this.foodList = list;
 //        notifyItemRemoved(position);
 //    }
 
@@ -44,10 +44,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.Holder> {
 
     @Override
     public void onBindViewHolder(Holder holder, final int position) {
-        holder.mDishTitle.setText(mFoods.get(position).getTitle());
-        holder.mDishCookingTime.setText("Cooking time " + mFoods.get(position).getCookingTime() + " min");
-//        holder.mDishIngredients.setText(mFoods.get(position).toString());
-//        holder.mView.setOnClickListener(new View.OnClickListener() {
+        holder.dishTitle.setText(foodList.get(position).getTitle());
+        holder.dishCookingTime.setText("Cooking time " + foodList.get(position).getCookingTime() + " min");
+//        holder.dishIngredients.setText(foodList.get(position).toString());
+//        holder.view.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
 //                onClickMyAdapter.onClick(position);
@@ -57,7 +57,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.Holder> {
 
     @Override
     public int getItemCount() {
-        return mFoods.size();
+        return foodList.size();
     }
 
     @Override
@@ -70,19 +70,19 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.Holder> {
 //    }
 
     static class Holder extends RecyclerView.ViewHolder {
-        ImageView mImageView;
-        TextView mDishTitle;
-        TextView mDishCookingTime;
-        TextView mDishIngredients;
-        View mView;
+        ImageView imageView;
+        TextView dishTitle;
+        TextView dishCookingTime;
+        TextView dishIngredients;
+        View view;
 
         Holder(View itemView) {
             super(itemView);
-            mView = itemView;
-            mImageView = (ImageView) itemView.findViewById(R.id.image);
-            mDishTitle = (TextView) itemView.findViewById(R.id.dishTitle);
-            mDishCookingTime = (TextView) itemView.findViewById(R.id.dishCookingTime);
-            mDishIngredients = (TextView) itemView.findViewById(R.id.dishIngredients);
+            view = itemView;
+            imageView = (ImageView) itemView.findViewById(R.id.image);
+            dishTitle = (TextView) itemView.findViewById(R.id.dishTitle);
+            dishCookingTime = (TextView) itemView.findViewById(R.id.dishCookingTime);
+            dishIngredients = (TextView) itemView.findViewById(R.id.dishIngredients);
         }
     }
 }

@@ -129,18 +129,26 @@ public class PrimitiveDB {
         ingrDrink3.addIngr("Cocoa");
         ingrDrink3.addIngr("Milk");
         ingrDrink3.addIngr("Sugar");
+        Ingredients ingrDrink4 = new Ingredients();
+        ingrDrink4.addIngr("Fruit juice");
+        Ingredients ingrDrink5 = new Ingredients();
+        ingrDrink5.addIngr("Milk");
 
         // Drinks
         Drink drink0 = new Drink("Black tea with lemon", 10, ingrDrink0, 1);
         Drink drink1 = new Drink("Green tea with lemon", 10, ingrDrink1, 1);
         Drink drink2 = new Drink("Coffee with milk", 10, ingrDrink2, 1);
         Drink drink3 = new Drink("Cocoa with milk", 10, ingrDrink3, 1);
+        Drink drink4 = new Drink("Fruit juice", 2, ingrDrink4, 1);
+        Drink drink5 = new Drink("Hot or cold milk", 2, ingrDrink5, 1);
 
         // Add dishes to list
         drinks.add(drink0);
         drinks.add(drink1);
         drinks.add(drink2);
         drinks.add(drink3);
+        drinks.add(drink4);
+        drinks.add(drink5);
     }
 
     public PrimitiveDB() {
