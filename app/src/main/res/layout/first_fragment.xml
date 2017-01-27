@@ -3,7 +3,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:id="@+id/fragment_1">
+              android:id="@+id/firstFragment">
 
     <TextView
         android:layout_width="match_parent"
@@ -27,26 +27,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/_1_var"
-            android:textSize="@dimen/RBtext_size"
+            android:textSize="@dimen/RadioButtonTextSize"
             android:layout_marginStart="40sp"
-            android:id="@+id/_1_var"
+            android:id="@+id/firstVar"
             android:checked="true"/>
 
         <RadioButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/_2_var"
-            android:textSize="@dimen/RBtext_size"
+            android:textSize="@dimen/RadioButtonTextSize"
             android:layout_marginStart="40sp"
-            android:id="@+id/_2_var"/>
+            android:id="@+id/secondVar"/>
 
         <RadioButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/_3_var"
-            android:textSize="@dimen/RBtext_size"
+            android:textSize="@dimen/RadioButtonTextSize"
             android:layout_marginStart="40sp"
-            android:id="@+id/_3_var"/>
+            android:id="@+id/thirdVar"/>
     </RadioGroup>
 
     <Button

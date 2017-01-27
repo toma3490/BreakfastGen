@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 public class ControllerImpl<T> implements AbstractController<T> {
 
-    PrimitiveDB primitiveDB = new PrimitiveDB();
-
     @Override
     public int randomGenerator(int max) {
         int min = 0;

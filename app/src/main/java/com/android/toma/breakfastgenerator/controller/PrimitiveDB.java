@@ -144,7 +144,6 @@ public class PrimitiveDB {
     }
 
     public PrimitiveDB() {
-
     }
 
     public ArrayList<Food> getFirstCategoryDishes(){

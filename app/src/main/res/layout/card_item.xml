@@ -30,7 +30,6 @@
                 android:id="@+id/dishTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/app_name"
                 android:textSize="@dimen/textSize"
                 android:textColor="@color/colorPrimaryText"
                 android:layout_weight="40"/>
@@ -40,7 +39,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/dishCookingTime"
                 android:textColor="@color/colorSecondaryText"
-                android:text="@string/cooking_time"
                 android:layout_weight="50"/>
 
             <TextView

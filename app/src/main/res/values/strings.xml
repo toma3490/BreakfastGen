@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">BreakfastGenerator</string>
     <string name="fragment_1_text">Fragment_1</string>
-    <string name="fragment_2_text">Fragment_2</string>
+    <string name="fragment_2_text">Your breakfast is:</string>
     <string name="header">Your breakfast will be with:</string>
     <string name="_1_var">1 dish and 1 drink</string>
     <string name="_2_var">2 dishes and 1 drink</string>

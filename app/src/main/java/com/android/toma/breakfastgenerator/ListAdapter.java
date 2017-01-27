@@ -12,30 +12,30 @@ import com.android.toma.breakfastgenerator.entity.Food;
 
 import java.util.ArrayList;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
+public class ListAdapter extends RecyclerView.Adapter<ListAdapter.Holder> {
 
     private LayoutInflater layoutInflater;
     private ArrayList<Food> mFoods;
-    private OnClickMyAdapter onClickMyAdapter;
+//    private OnClickMyAdapter onClickMyAdapter;
 
-    public MyAdapter(Context context, ArrayList<Food> list) {
+    public ListAdapter(Context context, ArrayList<Food> list) {
         layoutInflater = LayoutInflater.from(context);
         this.mFoods = list;
     }
 
-    public void updateList(ArrayList<Food> list){
-        this.mFoods = list;
-        notifyDataSetChanged();
-    }
+//    public void updateList(ArrayList<Food> list){
+//        this.mFoods = list;
+//        notifyDataSetChanged();
+//    }
 
-    public void updateListPosition(ArrayList<Food> list, int position){
-        this.mFoods = list;
-        notifyItemRemoved(position);
-    }
+//    public void updateListPosition(ArrayList<Food> list, int position){
+//        this.mFoods = list;
+//        notifyItemRemoved(position);
+//    }
 
-    public void setOnClickListenerAdapter(OnClickMyAdapter onClickMyAdapter){
-        this.onClickMyAdapter = onClickMyAdapter;
-    }
+//    public void setOnClickListenerAdapter(OnClickMyAdapter onClickMyAdapter){
+//        this.onClickMyAdapter = onClickMyAdapter;
+//    }
 
     @Override
     public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -45,7 +45,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
     @Override
     public void onBindViewHolder(Holder holder, final int position) {
         holder.mDishTitle.setText(mFoods.get(position).getTitle());
-        holder.mDishCookingTime.setText("COOKING TIME " + mFoods.get(position).getCookingTime());
+        holder.mDishCookingTime.setText("Cooking time " + mFoods.get(position).getCookingTime() + " min");
 //        holder.mDishIngredients.setText(mFoods.get(position).toString());
 //        holder.mView.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -65,9 +65,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
         return super.getItemViewType(position);
     }
 
-    interface OnClickMyAdapter{
-        void onClick(int position);
-    }
+//    interface OnClickMyAdapter{
+//        void onClick(int position);
+//    }
 
     static class Holder extends RecyclerView.ViewHolder {
         ImageView mImageView;
@@ -76,7 +76,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
         TextView mDishIngredients;
         View mView;
 
-        public Holder(View itemView) {
+        Holder(View itemView) {
             super(itemView);
             mView = itemView;
             mImageView = (ImageView) itemView.findViewById(R.id.image);

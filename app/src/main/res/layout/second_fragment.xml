@@ -3,21 +3,20 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:id="@+id/fragment_2"
-              android:background="@color/colorAccent">
+              android:id="@+id/secondFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/textSize"
         android:text="@string/fragment_2_text"
-        android:id="@+id/frag_2_text"
+        android:id="@+id/secondFragHeader"
         android:textAlignment="center"/>
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/recycler_view">
+        android:id="@+id/recyclerView">
 
     </android.support.v7.widget.RecyclerView>
 
@@ -27,6 +26,4 @@
         android:id="@+id/back"
         android:text="@string/back"
         android:layout_gravity="center"/>
-
-
 </LinearLayout>

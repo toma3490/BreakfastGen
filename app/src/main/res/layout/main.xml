@@ -14,18 +14,18 @@
     <fragment
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="com.android.toma.breakfastgenerator.Fragment_1"
-        tools:layout="@layout/fragment1"
-        android:id="@+id/fragment_1"
+        android:name="com.android.toma.breakfastgenerator.FirstFragment"
+        tools:layout="@layout/first_fragment"
+        android:id="@+id/firstFragment"
         android:layout_weight="1">
     </fragment>
 
     <!--<fragment-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"-->
-        <!--android:name="com.android.toma.breakfastgenerator.Fragment_2"-->
+        <!--android:name="com.android.toma.breakfastgenerator.SecondFragmentment"-->
         <!--android:layout_weight="1"-->
-        <!--tools:layout="@layout/fragment2"-->
+        <!--tools:layout="@layout/secondFragment"-->
         <!--android:id="@+id/fragment_2">-->
     <!--</fragment>-->
 </LinearLayout>
