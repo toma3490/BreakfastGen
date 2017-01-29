@@ -3,7 +3,8 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:id="@+id/firstFragment">
+              android:id="@+id/firstFragment"
+              android:background="@drawable/purty_wood">
 
     <TextView
         android:layout_width="match_parent"
@@ -54,10 +55,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/generateBtn"
         android:text="@string/generate"
+        android:textSize="@dimen/textSize"
         android:layout_gravity="center"
         android:layout_marginTop="50sp"
         android:background="@color/colorPrimaryLight"
         android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        style="?android:attr/borderlessButtonStyle"/>
 
 </LinearLayout>

@@ -9,12 +9,12 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.android.toma.breakfastgenerator.MainActivity">
+    tools:context="com.android.toma.breakfastgenerator.activities.MainActivity">
 
     <fragment
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="com.android.toma.breakfastgenerator.FirstFragment"
+        android:name="com.android.toma.breakfastgenerator.activities.MainScreen"
         tools:layout="@layout/first_fragment"
         android:id="@+id/firstFragment"
         android:layout_weight="1">
@@ -25,7 +25,7 @@
         <!--android:layout_height="wrap_content"-->
         <!--android:name="com.android.toma.breakfastgenerator.SecondFragmentment"-->
         <!--android:layout_weight="1"-->
-        <!--tools:layout="@layout/secondFragment"-->
+        <!--tools:layout="@layout/resultScreen"-->
         <!--android:id="@+id/fragment_2">-->
     <!--</fragment>-->
 </LinearLayout>

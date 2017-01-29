@@ -1,4 +1,4 @@
-package com.android.toma.breakfastgenerator;
+package com.android.toma.breakfastgenerator.activities;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,18 +9,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.android.toma.breakfastgenerator.R;
+import com.android.toma.breakfastgenerator.adapter.ListAdapter;
 import com.android.toma.breakfastgenerator.controller.FoodController;
 import com.android.toma.breakfastgenerator.entity.Food;
 
 import java.util.ArrayList;
 
-public class SecondFragment extends Fragment {
+public class ResultScreen extends Fragment {
+
+    public static final String BASE_URL = "http://192.168.0.109:8080/";
 
     private RecyclerView recyclerView;
-    private ListAdapter adapter;
     private FoodController controller;
-    private LinearLayoutManager linearLayoutManager;
-    private Button reGenerate;
+    ListAdapter adapter;
 
     private int index;
 
@@ -33,16 +35,35 @@ public class SecondFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+//        Retrofit.Builder builder = new Retrofit.Builder()
+//                .baseUrl(BASE_URL)
+//                .addConverterFactory(GsonConverterFactory.create());
+//        Retrofit retrofit = builder.build();
+//        FoodAdviserClient client = retrofit.create(FoodAdviserClient.class);
+//        Call<ArrayList<Food>> call = client.getDrinks();
+//        call.enqueue(new Callback<ArrayList<Food>>() {
+//            @Override
+//            public void onResponse(Call<ArrayList<Food>> call, Response<ArrayList<Food>> response) {
+//                ArrayList<Food> list = response.body();
+//                adapter = new ListAdapter(getContext(), list);
+//                recyclerView.setAdapter(adapter);
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ArrayList<Food>> call, Throwable t) {
+//                Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
         View view = inflater.inflate(R.layout.second_fragment, container, false);
 
-        linearLayoutManager = new LinearLayoutManager(getContext());
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         controller = new FoodController();
         setDataInAdapter();
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        reGenerate = (Button) view.findViewById(R.id.reGenerate);
+        Button reGenerate = (Button) view.findViewById(R.id.reGenerate);
         reGenerate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
