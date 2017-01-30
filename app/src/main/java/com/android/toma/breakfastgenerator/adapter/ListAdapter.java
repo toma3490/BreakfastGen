@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.toma.breakfastgenerator.R;
+import com.android.toma.breakfastgenerator.animation.ResizeAnimation;
 import com.android.toma.breakfastgenerator.entity.Food;
 
 import java.util.ArrayList;
@@ -18,6 +19,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.Holder> {
     private LayoutInflater layoutInflater;
     private ArrayList<Food> foodList;
 //    private OnClickMyAdapter onClickMyAdapter;
+    private boolean isShown = false;
+    ResizeAnimation resizeAnimation;
 
     public ListAdapter(Context context, ArrayList<Food> list) {
         layoutInflater = LayoutInflater.from(context);
@@ -44,11 +47,26 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.Holder> {
     }
 
     @Override
-    public void onBindViewHolder(Holder holder, final int position) {
+    public void onBindViewHolder(final Holder holder, final int position) {
         holder.dishTitle.setText(foodList.get(position).getTitle());
         holder.dishCookingTime.setText("Cooking time " + foodList.get(position).getCookingTime() + " min");
         holder.imageView.setImageResource(foodList.get(position).getFoodImage());
-//        holder.dishIngredients.setText(foodList.get(position).toString());
+//        resizeAnimation = new ResizeAnimation(holder.view, 400);
+        holder.ingredientsHeader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (isShown == false){
+                    holder.ingredientsContent.setVisibility(View.VISIBLE);
+                    holder.ingredientsContent.setText(foodList.get(position).getIngredients().toString());
+//                    resizeAnimation.setDuration(600);
+//                    view.startAnimation(resizeAnimation);
+                    isShown = true;
+                }else if (isShown == true){
+                    holder.ingredientsContent.setVisibility(View.GONE);
+                    isShown = false;
+                }
+            }
+        });
 //        holder.view.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -75,7 +93,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.Holder> {
         ImageView imageView;
         TextView dishTitle;
         TextView dishCookingTime;
-        TextView dishIngredients;
+        TextView ingredientsHeader;
+        TextView ingredientsContent;
         View view;
 
         Holder(View itemView) {
@@ -84,7 +103,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.Holder> {
             imageView = (ImageView) itemView.findViewById(R.id.image);
             dishTitle = (TextView) itemView.findViewById(R.id.dishTitle);
             dishCookingTime = (TextView) itemView.findViewById(R.id.dishCookingTime);
-            dishIngredients = (TextView) itemView.findViewById(R.id.dishIngredients);
+            ingredientsHeader = (TextView) itemView.findViewById(R.id.dishIngredients);
+            ingredientsContent = (TextView) itemView.findViewById(R.id.ingrContent);
         }
     }
 }

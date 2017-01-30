@@ -18,11 +18,12 @@ import java.util.ArrayList;
 
 public class ResultScreen extends Fragment {
 
-    public static final String BASE_URL = "http://192.168.0.109:8080/";
+    public static final String BASE_URL = "http://52.26.27.71:8080/";
 
     private RecyclerView recyclerView;
     private FoodController controller;
-    ListAdapter adapter;
+    private ListAdapter adapter;
+    private LinearLayoutManager linearLayoutManager;
 
     private int index;
 
@@ -35,6 +36,10 @@ public class ResultScreen extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        View view = inflater.inflate(R.layout.second_fragment, container, false);
+        linearLayoutManager = new LinearLayoutManager(getContext());
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+
 //        Retrofit.Builder builder = new Retrofit.Builder()
 //                .baseUrl(BASE_URL)
 //                .addConverterFactory(GsonConverterFactory.create());
@@ -46,6 +51,7 @@ public class ResultScreen extends Fragment {
 //            public void onResponse(Call<ArrayList<Food>> call, Response<ArrayList<Food>> response) {
 //                ArrayList<Food> list = response.body();
 //                adapter = new ListAdapter(getContext(), list);
+//                recyclerView.setLayoutManager(linearLayoutManager);
 //                recyclerView.setAdapter(adapter);
 //            }
 //
@@ -55,10 +61,6 @@ public class ResultScreen extends Fragment {
 //            }
 //        });
 
-        View view = inflater.inflate(R.layout.second_fragment, container, false);
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         controller = new FoodController();
         setDataInAdapter();
         recyclerView.setLayoutManager(linearLayoutManager);

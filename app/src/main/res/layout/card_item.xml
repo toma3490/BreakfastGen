@@ -50,6 +50,14 @@ app:cardElevation="5dp">
             android:text="@string/ingredients"
             android:layout_weight="10"
             android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ingrContent"
+            android:textColor="@color/colorSecondaryText"
+            android:layout_marginLeft="5dp"
+            android:visibility="gone"/>
     </LinearLayout>
 
 
