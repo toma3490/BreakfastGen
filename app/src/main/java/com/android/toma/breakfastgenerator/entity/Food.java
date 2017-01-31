@@ -1,9 +1,19 @@
 package com.android.toma.breakfastgenerator.entity;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Food {
+
     public static int nextId = 0;
+    @SerializedName("name_en")
+    @Expose
     private String title;
+    @SerializedName("cooking_time")
+    @Expose
     private int cookingTime;
+    @SerializedName("ingredients_en")
+    @Expose
     private Ingredients ingredients;
     private int foodImage;
     private int id;
