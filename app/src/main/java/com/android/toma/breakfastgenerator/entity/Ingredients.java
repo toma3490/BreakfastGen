@@ -14,7 +14,7 @@ public class Ingredients {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (String ingr : ingredients) {
-            builder.append(ingr + "\n");
+            builder.append("\n" + ingr);
         }
         return builder.toString();
     }

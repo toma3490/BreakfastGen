@@ -23,44 +23,59 @@ app:cardElevation="5dp">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:weightSum="100">
+        android:weightSum="5">
 
-        <TextView
-            android:id="@+id/dishTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/textSize"
-            android:text="T"
-            android:textColor="@color/colorPrimaryText"
-            android:layout_weight="40"
-            android:layout_marginLeft="5dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:orientation="vertical">
 
-        <TextView
+            <TextView
+                android:id="@+id/dishTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textSize"
+                android:text="T"
+                android:textColor="@color/colorPrimaryText"
+                android:layout_marginLeft="5dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dishCookingTime"
+                android:textColor="@color/colorSecondaryText"
+                android:text="T"
+                android:layout_marginLeft="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/dishCookingTime"
-            android:textColor="@color/colorSecondaryText"
-            android:layout_weight="50"
-            android:text="T"
-            android:layout_marginLeft="5dp"/>
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/dishIngredients"
-            android:textColor="@color/colorAccent"
-            android:text="@string/ingredients"
-            android:layout_weight="10"
-            android:layout_marginLeft="5dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dishIngredients"
+                android:textColor="@color/colorAccent"
+                android:text="@string/ingredients"
+                android:layout_marginLeft="5dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/ingrContent"
-            android:textColor="@color/colorSecondaryText"
-            android:layout_marginLeft="5dp"
-            android:visibility="gone"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ingrContent"
+                android:textColor="@color/colorSecondaryText"
+                android:layout_marginLeft="5dp"
+                android:visibility="gone"/>
+        </LinearLayout>
+
     </LinearLayout>
+
+
+
+
 
 
 </LinearLayout>
