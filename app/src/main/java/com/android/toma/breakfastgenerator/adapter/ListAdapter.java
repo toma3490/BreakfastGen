@@ -58,8 +58,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.Holder> {
                 if (isShown == false){
                     holder.ingredientsContent.setVisibility(View.VISIBLE);
                     holder.ingredientsContent.setText(foodList.get(position).getIngredients().toString());
-//                    resizeAnimation.setDuration(600);
-//                    view.startAnimation(resizeAnimation);
                     isShown = true;
                 }else if (isShown == true){
                     holder.ingredientsContent.setVisibility(View.GONE);
