@@ -12,8 +12,8 @@ public class Food {
     @SerializedName("cooking_time")
     @Expose
     private int cookingTime;
-    @SerializedName("ingredients_en")
-    @Expose
+//    @SerializedName("ingredients_en")
+//    @Expose
     private Ingredients ingredients;
     private int foodImage;
     private int id;
