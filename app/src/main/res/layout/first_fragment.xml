@@ -58,9 +58,8 @@
         android:textSize="@dimen/textSize"
         android:layout_gravity="center"
         android:layout_marginTop="50sp"
-        android:background="@color/colorPrimaryLight"
+        android:background="@drawable/ripple"
         android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold"
-        style="?android:attr/borderlessButtonStyle"/>
+        android:textStyle="bold"/>
 
 </LinearLayout>

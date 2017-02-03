@@ -2,9 +2,9 @@ package com.android.toma.breakfastgenerator.entity;
 
 public class Drink extends Food{
 
-    public Drink(String title, int cookingTime, Ingredients ingredients, int foodImage) {
-        super(title, cookingTime, ingredients, foodImage);
-    }
+//    public Drink(String title, int cookingTime, Ingredients ingredients, int foodImage) {
+//        super(title, cookingTime, ingredients, foodImage);
+//    }
 
     @Override
     public String toString() {
