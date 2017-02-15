@@ -8,22 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.android.toma.breakfastgenerator.R;
 import com.android.toma.breakfastgenerator.adapter.ListAdapter;
 import com.android.toma.breakfastgenerator.controller.FoodController;
 import com.android.toma.breakfastgenerator.entity.Food;
-import com.android.toma.breakfastgenerator.entity.JSONResponse;
-import com.android.toma.breakfastgenerator.service.FoodAdviserClient;
 
 import java.util.ArrayList;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ResultScreen extends Fragment {
 
@@ -46,35 +37,35 @@ public class ResultScreen extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.second_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_result, container, false);
         linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
 
-        Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create());
-        Retrofit retrofit = builder.build();
-        FoodAdviserClient client = retrofit.create(FoodAdviserClient.class);
-        Call<JSONResponse> call = client.getDrinks();
-//        Call<ArrayList<Food>> call = client.getFirstCategoryDishes();
-        call.enqueue(new Callback<JSONResponse>() {
-            @Override
-            public void onResponse(Call<JSONResponse> call, Response<JSONResponse> response) {
-                JSONResponse jsonResponse = response.body();
-                foodList = new ArrayList<>(jsonResponse.getFoodList());
-                adapter = new ListAdapter(getContext(), foodList);
-                recyclerView.setLayoutManager(linearLayoutManager);
-                recyclerView.setAdapter(adapter);
-            }
-            @Override
-            public void onFailure(Call<JSONResponse> call, Throwable t) {
-                Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        Retrofit.Builder builder = new Retrofit.Builder()
+//                .baseUrl(BASE_URL)
+//                .addConverterFactory(GsonConverterFactory.create());
+//        Retrofit retrofit = builder.build();
+//        FoodAdviserClient client = retrofit.create(FoodAdviserClient.class);
+//        Call<JSONResponse> call = client.getDrinks();
+////        Call<ArrayList<Food>> call = client.getFirstCategoryDishes();
+//        call.enqueue(new Callback<JSONResponse>() {
+//            @Override
+//            public void onResponse(Call<JSONResponse> call, Response<JSONResponse> response) {
+//                JSONResponse jsonResponse = response.body();
+//                foodList = new ArrayList<>(jsonResponse.getFoodList());
+//                adapter = new ListAdapter(getContext(), foodList);
+//                recyclerView.setLayoutManager(linearLayoutManager);
+//                recyclerView.setAdapter(adapter);
+//            }
+//            @Override
+//            public void onFailure(Call<JSONResponse> call, Throwable t) {
+//                Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
-//        controller = new FoodController();
-//        setDataInAdapter();
-//        recyclerView.setLayoutManager(linearLayoutManager);
+        controller = new FoodController();
+        setDataInAdapter();
+        recyclerView.setLayoutManager(linearLayoutManager);
 
         ImageButton reGenerate = (ImageButton) view.findViewById(R.id.reGenerate);
         reGenerate.setOnClickListener(new View.OnClickListener() {

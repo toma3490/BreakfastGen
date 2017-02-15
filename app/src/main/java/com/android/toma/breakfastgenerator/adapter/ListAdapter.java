@@ -50,7 +50,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.Holder> {
     public void onBindViewHolder(final Holder holder, final int position) {
         holder.dishTitle.setText(foodList.get(position).getTitle());
         holder.dishCookingTime.setText("Cooking time " + foodList.get(position).getCookingTime() + " min");
-//        holder.imageView.setImageResource(foodList.get(position).getFoodImage());
+        holder.imageView.setImageResource(foodList.get(position).getFoodImage());
         holder.ingredientsHeader.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

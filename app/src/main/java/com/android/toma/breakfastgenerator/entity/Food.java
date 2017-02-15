@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Food {
 
-//    public static int nextId = 0;
+    public static int nextId = 0;
     @SerializedName("name_en")
     @Expose
     private String title;
@@ -18,13 +18,13 @@ public class Food {
     private int foodImage;
     private int id;
 
-//    public Food(String title, int cookingTime, Ingredients ingredients, int foodImage) {
-//        this.title = title;
-//        this.cookingTime = cookingTime;
-//        this.ingredients = ingredients;
-//        this.foodImage = foodImage;
-//        this.id = ++nextId;
-//    }
+    public Food(String title, int cookingTime, Ingredients ingredients, int foodImage) {
+        this.title = title;
+        this.cookingTime = cookingTime;
+        this.ingredients = ingredients;
+        this.foodImage = foodImage;
+        this.id = ++nextId;
+    }
 
     public String getTitle() {
         return title;

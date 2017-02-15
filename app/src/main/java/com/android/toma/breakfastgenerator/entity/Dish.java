@@ -1,9 +1,9 @@
 package com.android.toma.breakfastgenerator.entity;
 
 public class Dish extends Food {
-//    public Dish(String title, int cookingTime, Ingredients ingredients, int foodImage) {
-//        super(title, cookingTime, ingredients, foodImage);
-//    }
+    public Dish(String title, int cookingTime, Ingredients ingredients, int foodImage) {
+        super(title, cookingTime, ingredients, foodImage);
+    }
 
     @Override
     public String toString() {
