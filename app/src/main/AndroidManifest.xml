@@ -25,6 +25,9 @@
                   android:screenOrientation="portrait">
             
         </activity>
+
+        <receiver android:name=".service.AlarmReceiver"
+                  android:process=":remote"/>
     </application>
 
 </manifest>
