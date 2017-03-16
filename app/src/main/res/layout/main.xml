@@ -12,13 +12,19 @@
     android:background="@drawable/background"
     tools:context="com.android.toma.breakfastgenerator.activities.MainActivity">
 
-    <fragment
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="com.android.toma.breakfastgenerator.activities.MainScreen"
-        tools:layout="@layout/fragment_choose"
-        android:id="@+id/firstFragment"
-        android:layout_weight="1">
-    </fragment>
+        android:id="@+id/container">
+
+    </FrameLayout>
+    <!--<fragment-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:name="com.android.toma.breakfastgenerator.fragments.MainScreenFragmentFragment"-->
+        <!--tools:layout="@layout/fragment_choose"-->
+        <!--android:id="@+id/firstFragment"-->
+        <!--android:layout_weight="1">-->
+    <!--</fragment>-->
 
 </LinearLayout>

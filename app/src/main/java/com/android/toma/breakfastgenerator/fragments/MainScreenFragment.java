@@ -1,4 +1,4 @@
-package com.android.toma.breakfastgenerator.activities;
+package com.android.toma.breakfastgenerator.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,16 +11,16 @@ import android.widget.RadioGroup;
 
 import com.android.toma.breakfastgenerator.R;
 
-public class MainScreen extends Fragment{
+public class MainScreenFragment extends Fragment{
 
     public FragmentTransaction fragmentTransaction;
-    public ResultScreen resultScreen;
+    public ResultScreenFragment resultScreenFragment;
     private RadioGroup radioGroup;
 
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_choose, container, false);
-        resultScreen = new ResultScreen();
+        resultScreenFragment = new ResultScreenFragment();
         radioGroup = (RadioGroup) view.findViewById(R.id.radioGroup);
         Button generateBtn = (Button) view.findViewById(R.id.generateBtn);
         generateBtn.setOnClickListener(new View.OnClickListener() {
@@ -28,9 +28,9 @@ public class MainScreen extends Fragment{
             public void onClick(View view) {
                 Bundle args = new Bundle();
                 args.putInt("index", getIndexById(getCheckedPoint()));
-                resultScreen.setArguments(args);
+                resultScreenFragment.setArguments(args);
                 fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.main, resultScreen);
+                fragmentTransaction.replace(R.id.container, resultScreenFragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
