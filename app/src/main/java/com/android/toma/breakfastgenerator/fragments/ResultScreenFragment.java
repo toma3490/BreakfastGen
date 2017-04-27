@@ -27,7 +27,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ResultScreenFragment extends Fragment {
 
-    public static final String BASE_URL = "http://52.26.27.71:8080";
+    public static final String BASE_URL = "http://52.26.27.71:8080/";
 
     private RecyclerView recyclerView;
     private FoodController controller;

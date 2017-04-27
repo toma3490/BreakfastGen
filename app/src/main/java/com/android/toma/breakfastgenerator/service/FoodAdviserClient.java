@@ -9,8 +9,8 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface FoodAdviserClient {
-    @GET("/api/drink/")
+    @GET("api/drink/")
     Call<JSONResponse> getDrinks();
-    @GET("/api/dish/main/")
+    @GET("api/dish/main/")
     Call<ArrayList<Food>> getFirstCategoryDishes();
 }
